@@ -83,8 +83,12 @@ namespace Exercise2
             while (!cars.Any(c => c.Speed <= 0))
             {
                 foreach (Car car in cars)
-                {
+                {                    
                     car.SlowDown();
+                    if (cars.Any(s => s.Speed <= 0))
+                    {
+                        break;
+                    }
                     Console.WriteLine($"{car.Name} is slowing down! current speed {car.Speed}!");
                 }
                 Thread.Sleep(100);
