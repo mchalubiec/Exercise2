@@ -1,5 +1,6 @@
 # Exercise2
 ## Wskaż błędy w kodzie
+'''
 class Program
     {
         enum colors
@@ -77,3 +78,4 @@ class Program
             Console.ReadKey();
         }
     }
+    '''
