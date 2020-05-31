@@ -7,7 +7,7 @@ namespace Exercise2
 {
     class Program
     {
-        enum colors
+        public enum colors
         {
             Red,
             Blue,
@@ -17,9 +17,9 @@ namespace Exercise2
         }
         public class Car
         {
-            public Guid Id { get; private set; }
-            public string Name { get; private set; }
-            public colors Color { get; private set; }
+            public Guid Id { get; set; }
+            public string Name { get; set; }
+            public colors Color { get; set; }
             public int Speed { get; private set; } = 0;
 
             public void SpeedUp()
@@ -32,31 +32,31 @@ namespace Exercise2
                 this.Speed -= Random().Next(5, 20);
                 if (this.Speed < 0)
                 {
-                    Console.WriteLine("{this.Name} has stopped.");
+                    Console.WriteLine($"{this.Name} has stopped.");
                 }
             }
         }
         static void Main(string[] args)
         {
-            new List<Car> cars;
+            List<Car> cars = new List<Car>();
             cars.Add(new Car()
             {
-                Id = Guid.NewGuid()
-                Name = "Crashy"
+                Id = Guid.NewGuid(),
+                Name = "Crashy",
                 Color = colors.Red
             });
 
             cars.Add(new Car()
             {
-                Id = Guid.NewGuid()
-                Name = "Trashy"
+                Id = Guid.NewGuid(),
+                Name = "Trashy",
                 Color = colors.Blue
             });
 
             cars.Add(new Car()
             {
-                Id = Guid.NewGuid()
-                Name = "Rushy"
+                Id = Guid.NewGuid(),
+                Name = "Rushy",
                 Color = colors.Black
             });
 
