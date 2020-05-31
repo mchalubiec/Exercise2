@@ -1,8 +1,7 @@
 # Exercise2
 ## Wskaż błędy w kodzie
-'''
-class Program
-    {
+
+
         enum colors
         {
             Red,
@@ -77,5 +76,3 @@ class Program
             Console.WriteLine("{0} {1} has stopped first.", cars.Single(c => c.Speed <= 0).Color, cars.Single(c => c.Speed <= 0).Name);
             Console.ReadKey();
         }
-    }
-    '''
