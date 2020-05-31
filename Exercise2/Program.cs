@@ -22,14 +22,25 @@ namespace Exercise2
             public colors Color { get; set; }
             public int Speed { get; private set; } = 0;
 
+            public static Random random;
+            public void InitRandom()
+            {
+                if (random == null)
+                {
+                    random = new Random();
+                }
+            }
+
             public void SpeedUp()
             {
-                this.Speed += Random().Next(5, 20);
+                InitRandom();
+                this.Speed += random.Next(5, 20);
             }
 
             public void SlowDown()
             {
-                this.Speed -= Random().Next(5, 20);
+                InitRandom();
+                this.Speed -= random.Next(5, 20);
                 if (this.Speed < 0)
                 {
                     Console.WriteLine($"{this.Name} has stopped.");
